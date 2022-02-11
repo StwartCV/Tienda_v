@@ -1,0 +1,104 @@
+#encabezado {
+    position: absolute; /*/Posicion absoluta/*/
+    top: 0; /*/Ponerlo arriba en la parte del browser/*/
+    left: 0; /*/totalmente a la izquierda/*/
+    height: 8%; /*/alto de la Pagina/*/
+    width: 100%; /*/ancho de la Pagina/*/
+    /*/text-align: center; Centrado/*/
+    background-color: blue;
+    color: white;
+}
+
+#encabezado h1{      /*/Para corregir la posicion de la etiqueta h1/*/
+    display: inline;
+}
+
+#menu {
+    position: absolute; /*/Posicion absoluta/*/
+    top: 8%;
+    left: 0; /*/totalmente a la izquierda/*/
+    height: 4%; /*/alto de la Pagina/*/
+    width: 100%; 
+    background-color: black;
+    color: white;
+}
+
+#menu a {
+    background-color: red;
+    color: black;
+}
+
+#menu a:hover {                 /*/Cuando el mouse este sobre el enlace cambie de color/*/
+    background-color: green;
+    color: white;
+}
+
+#barralateral {
+    position: absolute; /*/Posicion absoluta/*/
+    top: 12%;
+    left: 0;
+    padding: 10px;
+    height: 81%; /*/alto de la Pagina/*/
+    width: 20%; /*/ancho de la Pagina/*/
+    background-color: #00FFA0;  
+}
+
+#contenido {
+    position: absolute; /*/Posicion absoluta/*/
+    top: 12%;
+    left: 20%;
+    padding: 10px;
+    height: 81%; /*/alto de la Pagina/*/
+    width: 80%; /*/ancho de la Pagina/*/
+    background-color: #A9A9F5;
+    overflow: auto;
+}
+
+#piepagina {
+    position: absolute; /*/Posicion absoluta/*/
+    bottom: 0;
+    left: 0;
+    height: 4%; /*/alto de la Pagina/*/
+    width: 100%; /*/ancho de la Pagina/*/
+    background-color: #AAB0A0;
+    text-align: center;
+}
+
+#encabezadoTabla {
+    background-color: #F5DA81;
+    text-align: center;
+    color: #DF013A;
+}
+
+#tablaDetalle tr:nth-child(even) { /*/Para cambiar colores a lineas pares even/*/
+    background-color: blue;
+    color: white;
+}
+
+#tablaDetalle tr:nth-child(odd) { /*/Para cambiar colores a lineas impares odd/*/
+    background-color: greenyellow;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*figcaption {
+    color: rgb(170,150,50) /*/otra manera de agregar colores/*/
+}
+
+article header {
+    background-color: green; /*/#47F0B0 otra manera de colores/*/
+}/*/
