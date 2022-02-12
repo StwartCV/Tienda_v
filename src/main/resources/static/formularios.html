@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- Se actualiza la pagina index para que contenga nuevas etiquetas meta y demas etiqueta para la semantica del boddy -->
+
+<html lang="es">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Página principal de la tienda en linea"/>
+        <meta name="keywords" content="TechShop, html5, css3">
+        <link href="css/estilos.css" 
+              rel="stylesheet" 
+              type="text/css"/>
+    </head>
+    <body>
+        <header id="encabezado"> <!-- Etiqueta para ofrecerle al browser info de que es un encabezado -->
+            <h1>Ejemplo de uso de formularios</h1>
+        </header>
+        <nav id="menu"> <!-- Esta etiqueta es para ilustrarle al browser que posiblemente es un menu -->
+            <a href="ejemplo9.html">back</a>
+            <a href="index.html">Home</a>
+            <a href="ejemplo2.html">Next</a><br>
+        </nav>
+        <aside id="barralateral">   <!-- Etiqueta para indicar que es una barra lateral al final, puede ser a la izquierda o a la derecha, y pueden ser varias-->
+            <h2>Ultimas noticias</h2> 
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit purus ac morbi feugiat, montes non auctor magnis nisi praesent rutrum platea sagittis parturient gravida, quam nunc semper metus lacus in sociis conubia ullamcorper ultrices. Id inceptos erat potenti proin posuere iaculis, eget accumsan mi donec pellentesque fames semper, elementum neque tempor curae risus. Cum dignissim quisque sagittis maecenas cubilia mattis torquent a erat aliquet laoreet, nulla potenti id sem accumsan massa nibh ultricies molestie class,
+                pharetra turpis volutpat ad vulputate cursus fringilla bibendum penatibus diam.</p>    <!-- Parrrafo-->  
+        </aside>
+        <section id="contenido">
+            <h2>Ejemplos de formularios</h2>
+            <article>
+                <header><h3>Inventario de los campos posible de form</h3></header>
+                <form action="#">
+                    <label>button:</label><input type="button" name="campo01" value="campo01" /><br>
+                    <label>checkbox:</label><input type="checkbox" name="campo02" value="campo02" /><br>
+                    <label>color:</label><input type="color" name="campo03"/><br>
+                    <label>date:</label><input type="date" name="campo04"/><br>
+                    <label>datetime-local:</label><input type="datetime-local" name="campo05"/><br>
+                    <label>email:</label><input type="email" name="campo06"/><br>
+                    <label>file:</label><input type="file" name="campo07"/><br>
+                    <label>hidden:</label><input type="hidden" name="campo08" value="PROD-001"/><br>
+                    <label>search:</label><input type="search" name="campo09" value="manuales"/><br>
+                    <label>submit:</label><input type="submit" name="campo10" value="Enviar"/><br>
+                    <label>tel:</label><input type="tel" name="campo11" value="89457678"/><br>
+                    <label>text:</label><input type="text" name="campo12"
+                                               placeholder="Nombre y apellidos"/><br>
+                    <label>time:</label><input type="time" name="campo13"/><br>
+                    <label>url:</label><input type="url" name="campo14"/><br>
+                    <label>week:</label><input type="week" name="campo15"/><br>
+                    <label>image:</label><input type="image" name="campo16"/><br>
+                    <label>month:</label><input type="month" name="campo17"/><br>
+                    <label>number:</label><input type="number" name="campo18" min="18" max="25"/><br>
+                    <label>password:</label><input type="password" name="campo19"/><br>
+                    <label>radio</label><input type="radio" name="campo20"/><br>
+                    <label>range</label><input type="range" name="campo21" min="10" max="50"/><br>
+                    <label>reset</label><input type="reset" name="campo22" value="Reset"/><br>
+        </form>    
+            </article>
+        </section>
+        <footer id="piepagina">
+            Derechos Reservados &COPY; 2022, Telefono <address style="display: inline">8899-7766</address>
+        </footer>
+    </body>
+</html>
