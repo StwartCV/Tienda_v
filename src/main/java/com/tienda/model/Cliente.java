@@ -9,15 +9,15 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Data
-@Entity
+@Entity //entidad es una tabla de base de datos
 @Table(name="cliente") /*/utilizada para mapear la tabla de los registros clientes/*/
 public class Cliente implements Serializable {
     
     private static final long serialVersionUID = 1L;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idcliente;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //La genreracion de valores sea igual a la que genere la base de datos
+    private Long idCliente;
     
     private String nombre;
     private String apellidos;
