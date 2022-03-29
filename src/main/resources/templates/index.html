@@ -1,41 +1,39 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xlmns="http://www.w3.org/1999/xhtml">
     <head>
         <title>TechShop</title>
         <meta charset="UTF-8">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:replace="plantilla/plantilla :: header"/><!<!-- Insersion de un nuevo documento -->
-        
-        <h2>Gestion de Clientes</h2>
 
-        <a th:href="@{/nuevoCliente}">Nuevo Cliente</a>
-        <div th:if="${clientes != null and ! clientes.empty}">
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Correo</th>
-                        <th>Telefono</th>
-                        <th>Eliminar</th>
-                        <th>Modificar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="cliente : ${clientes}"> <!-- de comienzan a formar los datos -->
-                        <td th:text="${cliente.nombre}"></td>
-                        <td th:text="${cliente.apellidos}"></td>
-                        <td th:text="${cliente.correo}"></td>
-                        <td th:text="${cliente.telefono}"></td>
-                      <td><a th:href="@{/eliminarCliente/}+${cliente.idCliente}">Eliminar</a></td>
-                      <td><a th:href="@{/modificarCliente/}+${cliente.idCliente}">Modificar</a></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="contenido">
+
+            <h2>Nuestros Articulos</h2>
+            <div th:if="${articulos != null and !articulos.empty}">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Descripcion</th>
+                            <th>Precio</th>
+                            <th>Comprar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="articulo : ${articulos}"> <!-- de comienzan a formar los datos -->
+                            <td th:text="${articulo.descripcion}"></td>
+                            <td th:text="${articulo.precio}"></td>
+                            <td><a th:href="@{/carrito/agregar/}+${articulo.idArticulo}">Agregar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${clientes == null or clientes.empty}">
+                No tenemos articulos que mostrar...
+            </div>
         </div>
         <footer th:replace="plantilla/plantilla :: footer"/>
-        <div th:if="${clientes == null or clientes.empty}">
-            No tenemos lista de clientes que mostrar...
     </body>
 </html>
