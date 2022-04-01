@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xlmns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head>
         <title>TechShop</title>
         <meta charset="UTF-8">
@@ -19,17 +20,17 @@
                         <tr>
                             <th th:text="#{categoria.descripcion}">Descripcion</th>
                             <th th:text="#{categoria.activo}">activa</th>
-                            <th th:text="#{categoria.eliminar}">Eliminar</th>
-                            <th th:text="#{categoria.actualizar}">Actualizar</th>
+                            <th sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.eliminar}">Eliminar</th>
+                            <th sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.actualizar}">Actualizar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr th:each="categoria : ${categorias}"> <!-- de comienzan a formar los datos -->
                             <td th:text="${categoria.descripcion}"></td>
                             <td th:text="${categoria.activo}"></td>
-                            <td><a th:href="@{categoria/eliminar}+${categoria.idCategoria}"
+                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{categoria/eliminar}+${categoria.idCategoria}"
                                   th:text="#{accion.eliminar}">Eliminar</a></td>
-                            <td><a th:href="@{/categoria/modificar/}+${categoria.idCategoria}"
+                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/categoria/modificar/}+${categoria.idCategoria}"
                                    th:text="#{accion.actualizar}">Modificar</a></td>
                         </tr>
                     </tbody>
