@@ -21,7 +21,7 @@ public class Credito implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //La genreracion de valores sea igual a la que genere la base de datos
     @Column(name = "id_credito")
     private Long idCredito;
-    private Double limite;
+    public Double limite;
 
     public Credito() {
     }
