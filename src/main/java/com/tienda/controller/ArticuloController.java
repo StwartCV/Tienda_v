@@ -17,15 +17,27 @@ public class ArticuloController {
 
     @Autowired
     private ArticuloService articuloService;
-    
-     @GetMapping("/articulo/listado")
+
+    @GetMapping("/articulo/listado")
     public String inicio(Model model) {
         var articulos = articuloService.getArticulos(false);
+
+        var inventP = 0;
+        for (var a : articulos) {
+            inventP += a.existencias * a.precio;
+        }
+
+        var totalArticulos = 0;
+        for (var a : articulos) {
+            totalArticulos += a.existencias;
+        }
+
+        model.addAttribute("inventP", inventP);
+        model.addAttribute("totalArticulos", totalArticulos);
         model.addAttribute("articulos", articulos);
         return "/articulo/listado";
     }
 
-    
     @GetMapping("/articulo/nuevo")
     public String nuevoArticulo(Articulo articulo) {
         return "/articulo/modificar";
@@ -40,10 +52,10 @@ public class ArticuloController {
     @GetMapping("/articulo/modificar/{idArticulo}")
     public String modificarArticulo(Articulo articulo, Model model) {
         articulo = articuloService.getArticulo(articulo);
-        model.addAttribute("articulo",articulo);
+        model.addAttribute("articulo", articulo);
         return "articulo/modificar";
     }
-    
+
     @GetMapping("/articulo/eliminar/{idArticulo}")
     public String eliminarArticulo(Articulo articulo) {
         articuloService.delete(articulo);

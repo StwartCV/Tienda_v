@@ -24,8 +24,8 @@ public class Articulo implements Serializable {
     private Long idCategoria;
     private String descripcion;
     private String detalle;
-    private double precio;
-    private int existencias;
+    public double precio;
+    public int existencias;
     private boolean activo;
 
     public Articulo() {

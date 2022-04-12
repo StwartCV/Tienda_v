@@ -8,43 +8,11 @@
 
     <body>
         <header th:replace="plantilla/plantilla :: header"/><!-- Insersion de un nuevo documento -->
-        <div class="contenido">
-            <h2 th:text="#{articulo.titulo}">Gestion de Clientes</h2>
-
-            <a th:href="@{/articulo/nuevo}" th:text="#{articulo.nuevo}" sec:authorize="hasRole('ROLE_ADMIN')">Nuevo Articulo</a>
-            <div th:if="${articulos != null and ! articulos.empty}">
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th th:text="#{articulo.descripcion}">Descripcion</th>
-                            <th th:text="#{articulo.precio}">Precio</th>
-                            <th th:text="#{articulo.existencias}">Existencias</th>
-                            <th th:text="#{articulo.activo}">Activa</th>
-                            <th sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.eliminar}">Eliminar</th>
-                            <th sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{accion.actualizar}">Actualizar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="articulo : ${articulos}"> <!-- de comienzan a formar los datos -->
-                            <td th:text="${articulo.descripcion}"></td>
-                            <td th:text="${#numbers.formatDecimal(articulo.precio,3,2)}"
-                                style="text-align: right"></td>
-                            <td th:text="${articulo.existencias}"
-                                style="text-align: center"></td>
-                            <td><input type="checkbox" name="activa" th:checked="${articulo.activo}" disabled="true"></td>
-                            
-                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/articulo/eliminar}+${articulo.idArticulo}"
-                                   th:text="#{accion.eliminar}">Eliminar</a></td>
-                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/articulo/modificar/}+${articulo.idArticulo}" 
-                                   th:text="#{accion.actualizar}">Modificar</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div th:if="${articulos == null or articulos.empty}">
-                <p th:text="#{articulo.no_mostrar}">No tenemos articulos que mostrar...</p>
-            </div>
-        </div>
+        
+        <section th:replace="articulo/fragmentosArticulo :: botonesAgregar"/>
+        <section th:replace="articulo/fragmentosArticulo :: agregarArticulo"/>
+        <section th:replace="articulo/fragmentosArticulo :: listadoArticulos"/>
+        
         <footer th:replace="plantilla/plantilla :: footer"/>
     </body>
 </html>
